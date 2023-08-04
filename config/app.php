@@ -54,9 +54,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://localhost'),
+    'url' => env('APP_URL', 'https://pokedex-production-ed94.up.railway.app'),
 
-    'asset_url' => env('ASSET_URL'),
+    'asset_url' => env('ASSET_URL', 'https://pokedex-production-ed94.up.railway.app'),
 
     /*
     |--------------------------------------------------------------------------
