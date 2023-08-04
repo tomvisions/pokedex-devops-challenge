@@ -68,9 +68,6 @@ const optionsTwo = {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        error: function(xhr, status, error) {
-            console.error(error);
-        }
         
     }).done(function (res){
         let response = JSON.parse(res)
