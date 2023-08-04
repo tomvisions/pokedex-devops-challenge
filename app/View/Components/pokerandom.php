@@ -19,12 +19,12 @@ class pokerandom extends Component
     public $image;
     public $bgColor;
 
-    public function __construct($name, $type = 'normal', $id = '1', $image = 'no', $bgColor = '#EBEBD3')
+    public function __construct($name, $type = 'normal', $id = '1', $color, $image = 'no', $bgColor = '#EBEBD3')
     {
         //
         $this->name = Str::ucfirst($name);
         $this->color = $this->getColorPokemon($type);
-        $this->type = Str::ucfirst($type);
+        $this->type = Str::ucfirst($color);
         $this->image = $image;
         $this->id = $id;
         $this->bgColor = $bgColor;

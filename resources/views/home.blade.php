@@ -77,9 +77,7 @@
         </h1>
         <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 ">
             @foreach ($data as $item)
-                <x-pokerandom name="{{ $item['name'] }}" id="{{ $item['id'] }}"
-                    type="{{ $item['types'][0]['type']['name'] }}"
-                    image="{{ isset($item['sprites']['front_shiny']) ? $item['sprites']['front_shiny'] : $item['sprites']['front_default'] }}">
+                <x-pokerandom name="{{ $item['name'] }}" id="{{ $item['id'] }}" color='{{$item['types'][0]['type']['name']}}' type="{{ $item['types'][0]['type']['name'] }}" image="{{ isset($item['sprites']['front_shiny']) ? $item['sprites']['front_shiny'] : $item['sprites']['front_default'] }}">
                 </x-pokerandom>
             @endforeach
         </div>
