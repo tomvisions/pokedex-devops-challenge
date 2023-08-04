@@ -1,4 +1,4 @@
-<div class="w-full h-80 bg-[{{$bgColor}}] rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] px-6">
+<div class="w-full h-80 bg-[#EBEBD3] rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] px-6">
     <!-- When there is no desire, all things are at peace. - Laozi -->
     <div class="w-full flex justify-center">
         <img src="{{$image}}" alt="{{$name}}" srcset="" class="h-40">
