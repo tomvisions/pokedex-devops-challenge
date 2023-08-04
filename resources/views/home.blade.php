@@ -75,11 +75,8 @@
     <section class="bg-[#DA4167] p-8 lg:px-9 2xl:px-12" id="pokemons_randoms">
         <h1 class="text-[#EBEBD3] text-4xl font-sans font-extrabold mb-9 lg:font-black lg:text-5xl">Random Pokemons
         </h1>
-        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 ">
-            @foreach ($data as $item)
-                <x-pokerandom name="{{ $item['name'] }}" id="{{ $item['id'] }}" color='{{$item['types'][0]['type']['name']}}' type="{{ $item['types'][0]['type']['name'] }}" image="{{ isset($item['sprites']['front_shiny']) ? $item['sprites']['front_shiny'] : $item['sprites']['front_default'] }}">
-                </x-pokerandom>
-            @endforeach
+        <div class="grid w-full grid-cols-1 gap-8 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 " id="random__container">
+            
         </div>
     </section>
 @endsection

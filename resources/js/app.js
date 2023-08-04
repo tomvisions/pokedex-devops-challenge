@@ -59,6 +59,40 @@ const optionsTwo = {
     }
   })
 
+  $(document).ready(function() {
+
+
+    $.ajax({
+        url: 'random',
+        method: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+        
+    }).done(function (res){
+        let response = JSON.parse(res)
+        var randomContainer = document.getElementById('random__container')
+
+        response.forEach(elemento => {
+            randomContainer.innerHTML += `
+            <div class="w-full h-80 bg-[#EBEBD3] rounded-2xl shadow-[8px_8px_0_0_rgba(0,0,0,0.1)] px-6">
+            <!-- When there is no desire, all things are at peace. - Laozi -->
+            <div class="w-full flex justify-center">
+                <img src="${elemento['sprites']['front_default']}" alt="" srcset="" class="h-40">
+            </div>
+            <p class="text-xl font-sans font-bold text-gray-700">${toCapitalCase(elemento['name'])}</p>
+            <hr class="border-4 border-[${getColorByPokemon(elemento['types'][0]['type']['name'])}] rounded-full mt-2">
+            <span class="flex items-center text-sm font-medium mt-1 text-gray-700"><span class="flex w-2.5 h-2.5 bg-[${getColorByPokemon(elemento['types'][0]['type']['name'])}] rounded-full mr-1.5 flex-shrink-0"></span>${toCapitalCase(elemento['types'][0]['type']['name'])}</span>
+            <a href="pokedex/${elemento['name']}" class="block mt-4 text-center p-3 text-slate-100 font-extrabold rounded-xl bg-[#083D77]">Have a look</a>
+        </div>`
+        })
+        console.log(evolutions)
+    })
+  })
+
 const buttonSearch = document.getElementById('buttonSearch')
 
 buttonSearch.addEventListener('click', ()=>{

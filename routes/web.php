@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class,'view'])->name('home.index');
 
+Route::post('/random',[HomeController::class,'random'])->name('get.random');
+
 Route::get('/pokedex/{nameOrId}', [PokedexController::class,'view'])->name('pokedex.get');
 
 Route::post('/pokedex/evolutions/{nameOrID}', [PokedexController::class,'getEvoChain'])->name('pokedex.post');
