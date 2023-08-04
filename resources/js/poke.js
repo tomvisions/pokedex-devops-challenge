@@ -35,9 +35,6 @@ $(document).ready(function() {
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         },
-        error: function(xhr, status, error) {
-            console.error(error);
-        }
         
     }).done(function (res){
         let evolutions = JSON.parse(res)
@@ -48,7 +45,6 @@ $(document).ready(function() {
         evolutionsDiv.className = 'grid w-full max-[1200px]:grid-cols-1 place-content-center'
         evolutionsDiv.id = 'evolutions__div'
         let contador = 0
-        console.log(JSON.parse(res))
 
         if(evolutions[0])
         {

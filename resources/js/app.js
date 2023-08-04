@@ -53,7 +53,7 @@ const optionsTwo = {
                 </li></a>`
                 dropMenu.innerHTML = div
             }
-            console.log(arr)
+
         });
         
     }

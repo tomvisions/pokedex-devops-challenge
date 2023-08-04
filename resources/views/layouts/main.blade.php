@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     @yield('vite')
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
-    <link rel="icon" href="{{asset('images/mini_pokeball.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('images/pokeball.png')}}" type="image/x-icon">
     <title>Pokemon</title>
 </head>
 <body>
