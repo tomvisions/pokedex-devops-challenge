@@ -89,7 +89,6 @@ const optionsTwo = {
             <a href="pokedex/${elemento['name']}" class="block mt-4 text-center p-3 text-slate-100 font-extrabold rounded-xl bg-[#083D77]">Have a look</a>
         </div>`
         })
-        console.log(evolutions)
     })
   })
 
