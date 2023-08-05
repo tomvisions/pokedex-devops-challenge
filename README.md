@@ -17,13 +17,13 @@ https://pokedex-production-a7b0.up.railway.app/
 
 ### Search Pokémon
 
-On the home page of the application, users can use the search bar to search for a specific Pokémon. By entering the name or ID of the desired Pokémon in the search field and clicking or pressing Enter, the application will make an AJAX request to the /get_pokemons route in the HomeController. This request will internally access the getPokemons method to retrieve information about the searched Pokémon.
+On the home page of the application, users can use the search bar to search for a specific Pokémon. By entering the name or ID of the desired Pokémon in the search field and clicking or pressing Enter, the application will make an AJAX request to the `/get_pokemons` route in the HomeController. This request will internally access the getPokemons method to retrieve information about the searched Pokémon.
 
 The retrieved information, such as the image, name, primary type, and base experience of the Pokémon, will be displayed in a dropdown menu on the interface, allowing users to select the Pokémon they wish to view in more detail.
 
 ### View Detailed Pokémon Information in the Pokédex
 
-Once users select a Pokémon from the dropdown menu, the application will automatically redirect them to the route /pokedex/{nameOrId} to display detailed information about the selected Pokémon.
+Once users select a Pokémon from the dropdown menu, the application will automatically redirect them to the route `/pokedex/{nameOrId}` to display detailed information about the selected Pokémon.
 
 The relevant information that can be found in this section includes:
 
@@ -40,7 +40,7 @@ Users can explore the evolution chain of any Pokémon and view all its possible 
 
 ### Random Pokemons
 
-Just below the featured image on the home page, users will find a section called "Random Pokemons." This section will make an AJAX request to the /random route in the HomeController. The request will internally access the random method to retrieve an array of up to 10 random Pokémon from the PokeAPI.
+Just below the featured image on the home page, users will find a section called "Random Pokemons." This section will make an AJAX request to the `/random` route in the HomeController. The request will internally access the random method to retrieve an array of up to 10 random Pokémon from the PokeAPI.
 
 The information of the random Pokémon, including images and names, will be displayed in this section, allowing users to discover different Pokémon at random.
 
