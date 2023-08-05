@@ -17,7 +17,6 @@ const options = {
     activeClasses: 'bg-gray-100 text-gray-900',
     inactiveClasses: 'text-gray-500',
     onToggle: (item) => {
-        console.log('accordion item has been toggled');
         $('#arrow').toggleClass('rotate-180')
     }
 };
