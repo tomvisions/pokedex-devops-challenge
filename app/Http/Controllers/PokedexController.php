@@ -75,7 +75,8 @@ class PokedexController extends Controller
 
     public function getEvoChain($nameOrId)
     {
-        $data = Http::get('https://pokeapi.co/api/v2/pokemon-species/'.$nameOrId)->json();
+        $species = Http::get('https://pokeapi.co/api/v2/pokemon/'.Str::lower($nameOrId))->json();
+        $data = Http::get('https://pokeapi.co/api/v2/pokemon-species/'.$species['species']['name'])->json();
 
         $evoChain = Http::get($data['evolution_chain']['url'])->json();
         $evolutions = [];
