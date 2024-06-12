@@ -1,34 +1,19 @@
-
 version: '3'
 
 services:
-    # PHP Service
-    app:
-        image: php:8.2-fpm
+    web:
+        build: .
         volumes:
-            - .:/var/www/html
-        working_dir: /var/www/html
-        networks:
-            - laravel
-    # Nginx Service
-    webserver:
-        image: nginx:alpine
+            -   .:/var/www/html
+        container_name: pokedexdev
+        dns:
+            - 8.8.8.8
+            - 8.8.4.4
+        #        command:
         ports:
-            - "8000:80"
-        volumes:
-            - .:/var/www/html
-        #    - ./docker/nginx/conf.d:/etc/nginx/conf.d
-        networks:
-            - laravel
-    # MySQL Service
-    db:
-        image: mysql:5.7
-        environment:
-            MYSQL_DATABASE: laravel
-            MYSQL_ROOT_PASSWORD: password
-            MYSQL_USER: laravel
-            MYSQL_PASSWORD: password
-        networks:
-            - laravel
-networks:
-    laravel:
+            - "5173:5173"
+            - "8000:8000"
+        expose:
+            - "5173"
+            - "8000"
+        entrypoint: ["/bin/bash", "/usr/local/bin/entrypoint.sh"]
