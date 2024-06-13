@@ -3,3 +3,5 @@ WORKDIR /var/www/html
 RUN apk update && apk add bash openrc procps nodejs npm
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
+COPY . .
+ENTRYPOINT ["/bin/bash","/usr/local/bin/entrypoint.sh"]
