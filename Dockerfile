@@ -4,4 +4,5 @@ RUN apk update && apk add bash openrc procps nodejs npm
 COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY . .
+RUN ls -al /var/www/html
 ENTRYPOINT ["/bin/bash","/usr/local/bin/entrypoint.sh"]
