@@ -5,5 +5,6 @@ COPY entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/entrypoint.sh
 COPY .env.example .env
 COPY . .
-RUN ls -al /var/www/html
+RUN composer install && npm ci && npm run build
+
 ENTRYPOINT ["/bin/bash","/usr/local/bin/entrypoint.sh"]
